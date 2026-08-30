@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Wearable Safety Device | Charulata S D">
+  <title>Smart Wearable Safety Device | Charulata S D</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="wearable.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">CHARULATA S D</a>
+    <a class="back-link" href="work.html">← WORK</a>
+  </header>
+
+  <main>
+
+    <section class="project-hero">
+      <div class="section-top">
+        <p class="eyebrow">PROJECT 01</p>
+        <p class="section-index">NOV 2024 — FEB 2025</p>
+      </div>
+
+      <p class="project-kicker">ESP32 · GPS · GSM · LoRa · EMBEDDED SYSTEMS</p>
+
+      <h1>SMART WEARABLE<br><span>SAFETY DEVICE.</span></h1>
+
+      <p class="project-summary">
+        An ESP32-based emergency safety system combining real-time location tracking
+        with dual-channel communication, using GSM when network coverage is available
+        and LoRa as a fallback in areas without cellular connectivity.
+      </p>
+
+      <div class="tech-row">
+        <span>ESP32</span>
+        <span>GPS</span>
+        <span>GSM</span>
+        <span>LoRa</span>
+        <span>EMBEDDED C</span>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-label">01 — THE PROBLEM</div>
+      <div class="section-copy">
+        <h2>Emergency communication<br><span>cannot depend on one path.</span></h2>
+        <p>
+          The project focused on a practical emergency-alert device that could be
+          triggered without relying on a smartphone. The design needed to provide
+          location information, communicate with predefined contacts, and remain
+          useful when cellular network coverage was unavailable.
+        </p>
+
+        <div class="problem-grid">
+          <div><strong>01</strong><span>DISCREET TRIGGER</span><p>A push-button mechanism for initiating an emergency alert.</p></div>
+          <div><strong>02</strong><span>LIVE LOCATION</span><p>GPS-based geographical coordinates for rapid location reporting.</p></div>
+          <div><strong>03</strong><span>NETWORK FALLBACK</span><p>LoRa communication for situations where GSM connectivity is unavailable.</p></div>
+          <div><strong>04</strong><span>PORTABLE DESIGN</span><p>A compact, energy-conscious architecture intended for wearable use.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-section tinted-visual">
+      <div class="section-label">02 — SYSTEM ARCHITECTURE</div>
+      <div class="visual-copy">
+        <h2>One controller.<br><span>Two communication paths.</span></h2>
+        <p class="visual-note">
+          The submitted project report defines an ESP32-centered architecture with
+          GPS and GSM on the transmitter side, plus a LoRa link to a separate ESP32
+          receiver. The push button initiates the emergency sequence.
+        </p>
+
+        <figure class="hero-figure">
+          <img src="assets/wearable-block-diagram.png"
+               alt="Block diagram showing ESP32, GPS, GSM, LoRa, battery and push button with transmitter and receiver sides">
+          <figcaption>System block diagram from the project report.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-label">03 — THE DECISION PATH</div>
+      <div class="section-copy">
+        <h2>Trigger first.<br><span>Then choose the route.</span></h2>
+
+        <div class="decision-flow">
+          <div class="flow-node">EMERGENCY<br>SITUATION</div>
+          <b>↓</b>
+          <div class="flow-node">PRESS<br>PUSH BUTTON</div>
+          <b>↓</b>
+          <div class="flow-node decision">NETWORK<br>COVERAGE?</div>
+
+          <div class="branch">
+            <div class="branch-label">YES</div>
+            <b>↓</b>
+            <div class="flow-node">ESP32 + GPS<br>+ GSM</div>
+            <b>↓</b>
+            <div class="flow-node">LIVE LOCATION<br>+ SMS + CALL</div>
+          </div>
+
+          <div class="branch">
+            <div class="branch-label">NO</div>
+            <b>↓</b>
+            <div class="flow-node">ESP32<br>+ LoRa</div>
+            <b>↓</b>
+            <div class="flow-node">LIVE LOCATION<br>THROUGH LoRa</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-section">
+      <div class="section-label">04 — PROTOTYPE</div>
+      <div class="visual-copy">
+        <h2>From schematic<br><span>to hardware.</span></h2>
+        <p class="visual-note">
+          These are the transmitter and receiver prototype photographs included
+          in the submitted project report.
+        </p>
+
+        <div class="prototype-grid">
+          <figure>
+            <img src="assets/wearable-transmitter.jpg" alt="Prototype transmitter hardware on a breadboard">
+            <figcaption>Transmitter prototype · ESP32, GPS, GSM and trigger interface.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/wearable-receiver.jpg" alt="Prototype receiver hardware on a breadboard">
+            <figcaption>Receiver prototype · ESP32 and LoRa communication interface.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-section tinted-visual">
+      <div class="section-label">05 — SYSTEM FLOW</div>
+      <div class="visual-copy">
+        <h2>The emergency sequence<br><span>in one view.</span></h2>
+        <p class="visual-note">
+          The project flow chart shows the trigger, network-availability decision,
+          GSM/GPS path, and LoRa fallback path.
+        </p>
+
+        <figure class="flowchart-figure">
+          <img src="assets/wearable-flowchart.png"
+               alt="Project flowchart showing emergency trigger and GSM or LoRa communication paths">
+          <figcaption>Emergency communication flow chart from the project report.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-label">06 — MY CONTRIBUTION</div>
+      <div class="section-copy">
+        <h2>Engineering the path<br><span>from trigger to alert.</span></h2>
+
+        <div class="contribution-list">
+          <div><span>01</span><p>Worked on the ESP32-based wearable architecture integrating GPS, GSM and LoRa modules.</p></div>
+          <div><span>02</span><p>Implemented the dual-channel communication approach, using LoRa as a fallback when GSM connectivity was unavailable.</p></div>
+          <div><span>03</span><p>Developed the SOS alert mechanism to transmit emergency notifications with real-time geographical coordinates to predefined contacts.</p></div>
+          <div><span>04</span><p>Worked on GPS-based location tracking and communication workflows for portable operation.</p></div>
+          <div><span>05</span><p>Validated the system across field-testing scenarios covering communication range, location accuracy and emergency-response reliability.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section metrics-section">
+      <div class="section-label">07 — ENGINEERING TAKEAWAY</div>
+      <div class="section-copy">
+        <h2>Reliability is not<br><span>just a component choice.</span></h2>
+
+        <div class="takeaway-grid">
+          <div>
+            <strong>GPS</strong>
+            <span>LOCATION</span>
+            <p>Provides the geographical coordinates needed for an emergency response.</p>
+          </div>
+          <div>
+            <strong>GSM</strong>
+            <span>PRIMARY LINK</span>
+            <p>Supports emergency messaging and calls when cellular connectivity is available.</p>
+          </div>
+          <div>
+            <strong>LoRa</strong>
+            <span>FALLBACK LINK</span>
+            <p>Extends the communication strategy beyond areas with cellular coverage.</p>
+          </div>
+        </div>
+
+        <p class="closing-copy">
+          The central engineering idea was simple: an emergency system should have
+          another route when its primary communication path fails.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-end">
+      <p class="eyebrow">PROJECT TAKEAWAY</p>
+      <h2>DESIGN FOR THE<br><span>UNEXPECTED.</span></h2>
+      <p>
+        A wearable safety system becomes more useful when sensing, location and
+        communication are designed as one connected system.
+      </p>
+      <a href="work.html" class="back-button">← BACK TO WORK</a>
+    </section>
+
+  </main>
+</body>
+</html>
