@@ -20,21 +20,15 @@
         <p class="eyebrow">PROJECT 01</p>
         <p class="section-index">MAR 2025 — JUL 2025</p>
       </div>
-
       <p class="project-kicker">FPGA · VHDL · LOW-POWER DIGITAL DESIGN</p>
       <h1>32-BIT MULTIPLIER<br><span>&amp; DIVIDER.</span></h1>
-
       <p class="project-summary">
         Design and implementation of a low-power 32-bit arithmetic processing unit
-        on a Spartan-7-based Boolean FPGA board, with emphasis on power efficiency,
-        resource utilization, timing and real-time hardware operation.
+        on a Spartan-7-based Boolean FPGA board, evaluated across power, resource
+        utilization, timing and real-time hardware operation.
       </p>
-
       <div class="tech-row">
-        <span>VHDL</span>
-        <span>SPARTAN-7</span>
-        <span>VIVADO</span>
-        <span>DSP48E1</span>
+        <span>VHDL</span><span>SPARTAN-7</span><span>VIVADO</span><span>DSP48E1</span>
       </div>
     </section>
 
@@ -50,53 +44,40 @@
       </div>
     </section>
 
-    <section class="project-section split">
-      <div class="section-label">02 — THE APPROACH</div>
+    <section class="project-section">
+      <div class="section-label">02 — THE ARCHITECTURES</div>
       <div class="section-copy">
         <h2>Four architectures.<br><span>One hardware decision.</span></h2>
-
         <div class="architecture-grid">
-          <article>
-            <span>01</span>
-            <h3>DSP-BASED MULTIPLIER</h3>
-            <p>Uses the FPGA's dedicated DSP48E1 resources with pipelining for high-speed arithmetic.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>BOOTH MULTIPLIER</h3>
-            <p>Reduces multiplication operations through Booth encoding of signed binary operands.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>WALLACE TREE</h3>
-            <p>Reduces partial products through layers of full and half adders.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>NON-RESTORING DIVIDER</h3>
-            <p>Uses iterative conditional addition/subtraction for sequential binary division.</p>
-          </article>
+          <article><span>01</span><h3>DSP-BASED MULTIPLIER</h3><p>Dedicated DSP48E1 resources with pipelining for high-speed arithmetic.</p></article>
+          <article><span>02</span><h3>BOOTH MULTIPLIER</h3><p>Signed multiplication using Booth encoding to reduce arithmetic operations.</p></article>
+          <article><span>03</span><h3>WALLACE TREE</h3><p>Partial-product reduction through layers of full and half adders.</p></article>
+          <article><span>04</span><h3>NON-RESTORING DIVIDER</h3><p>Iterative conditional addition/subtraction for sequential binary division.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-section">
+      <div class="section-label">03 — SEE THE HARDWARE</div>
+      <div class="visual-copy">
+        <h2>Not just a block diagram.<br><span>Actual RTL.</span></h2>
+        <p class="visual-note">These are the project figures from the submitted technical paper, shown directly rather than recreated.</p>
+        <div class="visual-grid four">
+          <figure><img src="assets/dsp-rtl.png" alt="DSP based multiplier RTL schematic"><figcaption>DSP-based multiplier · RTL schematic</figcaption></figure>
+          <figure><img src="assets/booth-rtl.png" alt="Booth multiplier RTL schematic"><figcaption>Booth multiplier · RTL schematic</figcaption></figure>
+          <figure><img src="assets/wallace-rtl.png" alt="Wallace Tree multiplier RTL schematic"><figcaption>Wallace Tree · RTL schematic</figcaption></figure>
+          <figure><img src="assets/divider-rtl.png" alt="Non-restoring divider RTL schematic"><figcaption>Non-restoring divider · RTL schematic</figcaption></figure>
         </div>
       </div>
     </section>
 
     <section class="project-section">
-      <div class="section-label">03 — HARDWARE FLOW</div>
+      <div class="section-label">04 — HARDWARE FLOW</div>
       <div class="section-copy">
         <h2>From operands<br><span>to visible output.</span></h2>
-
         <div class="flow">
-          <div>32-BIT<br>OPERANDS</div>
-          <b>→</b>
-          <div>INPUT<br>REGISTERS</div>
-          <b>→</b>
-          <div>ARITHMETIC<br>CORE</div>
-          <b>→</b>
-          <div>OUTPUT<br>REGISTER</div>
-          <b>→</b>
-          <div>LOWER 16 BITS<br>ON LEDs</div>
+          <div>32-BIT<br>OPERANDS</div><b>→</b><div>INPUT<br>REGISTERS</div><b>→</b><div>ARITHMETIC<br>CORE</div><b>→</b><div>OUTPUT<br>REGISTER</div><b>→</b><div>LOWER 16 BITS<br>ON LEDs</div>
         </div>
-
         <p>
           Because of the board's limited I/O, operands are entered in 16-bit segments
           using push buttons, while the lower 16 bits of the result are displayed
@@ -105,45 +86,65 @@
       </div>
     </section>
 
+    <section class="visual-section tinted-visual">
+      <div class="section-label">05 — SIMULATION</div>
+      <div class="visual-copy">
+        <h2>Simulate before<br><span>you trust the hardware.</span></h2>
+        <p class="visual-note">
+          Vivado simulation was used to verify the multiplier and divider across 32-bit
+          operand combinations. The paper reports correct products/quotients and a
+          completion <code>ready</code> signal.
+        </p>
+        <div class="visual-grid four">
+          <figure><img src="assets/dsp-sim.png" alt="DSP multiplier Vivado simulation"><figcaption>DSP-based multiplier · simulation</figcaption></figure>
+          <figure><img src="assets/booth-sim.png" alt="Booth multiplier Vivado simulation"><figcaption>Booth multiplier · simulation</figcaption></figure>
+          <figure><img src="assets/wallace-sim.png" alt="Wallace Tree multiplier Vivado simulation"><figcaption>Wallace Tree · simulation</figcaption></figure>
+          <figure><img src="assets/divider-sim.png" alt="Non-restoring divider Vivado simulation"><figcaption>Non-restoring divider · simulation</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-section">
+      <div class="section-label">06 — ALGORITHMIC VIEW</div>
+      <div class="visual-copy">
+        <h2>Two architectures<br><span>worth seeing.</span></h2>
+        <div class="algorithm-grid">
+          <figure><img src="assets/wallace-structure.png" alt="Wallace Tree structure from project paper"><figcaption>Wallace Tree reduction structure</figcaption></figure>
+          <figure><img src="assets/divider-flow.png" alt="Non-restoring division flowchart from project paper"><figcaption>Non-restoring division control flow</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
     <section class="project-section metrics-section">
-      <div class="section-label">04 — RESULTS</div>
+      <div class="section-label">07 — RESULTS</div>
       <div class="section-copy">
         <h2>The numbers<br><span>tell the story.</span></h2>
-
         <div class="metric-grid">
-          <div class="metric">
-            <strong>0.085</strong>
-            <span>W · DSP MULTIPLIER POWER</span>
-          </div>
-          <div class="metric">
-            <strong>0.096</strong>
-            <span>W · NON-RESTORING DIVIDER POWER</span>
-          </div>
-          <div class="metric">
-            <strong>1</strong>
-            <span>DSP SLICE USED BY DSP MULTIPLIER</span>
-          </div>
-          <div class="metric">
-            <strong>9</strong>
-            <span>LUTs USED BY DSP MULTIPLIER</span>
-          </div>
-          <div class="metric">
-            <strong>100</strong>
-            <span>MHz · SYSTEM CLOCK</span>
-          </div>
-          <div class="metric">
-            <strong>32</strong>
-            <span>CLOCK CYCLES · DIVIDER OPERATION</span>
-          </div>
+          <div class="metric"><strong>0.085</strong><span>W · DSP MULTIPLIER POWER</span></div>
+          <div class="metric"><strong>0.096</strong><span>W · NON-RESTORING DIVIDER POWER</span></div>
+          <div class="metric"><strong>1</strong><span>DSP SLICE · DSP MULTIPLIER</span></div>
+          <div class="metric"><strong>9</strong><span>LUTs · DSP MULTIPLIER</span></div>
+          <div class="metric"><strong>100</strong><span>MHz · SYSTEM CLOCK</span></div>
+          <div class="metric"><strong>32</strong><span>CLOCK CYCLES · DIVIDER</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-section results-visual">
+      <div class="section-label">08 — VIVADO REPORTS</div>
+      <div class="visual-copy">
+        <h2>What the tool<br><span>actually measured.</span></h2>
+        <div class="report-grid">
+          <figure><img src="assets/power-reports.png" alt="Vivado power reports from the project paper"><figcaption>Power reports and power comparison</figcaption></figure>
+          <figure><img src="assets/utilization-reports.png" alt="Vivado utilization reports from the project paper"><figcaption>FPGA resource utilization reports</figcaption></figure>
         </div>
       </div>
     </section>
 
     <section class="project-section comparison">
-      <div class="section-label">05 — TRADE-OFFS</div>
+      <div class="section-label">09 — TRADE-OFFS</div>
       <div class="section-copy">
         <h2>Performance is<br><span>a balancing act.</span></h2>
-
         <div class="comparison-table">
           <div class="table-head"><span>ARCHITECTURE</span><span>POWER</span><span>LUTs</span><span>DSP</span></div>
           <div><span>DSP MULTIPLIER</span><span>0.085 W</span><span>9</span><span>1</span></div>
@@ -151,26 +152,23 @@
           <div><span>WALLACE MULTIPLIER</span><span>0.115 W</span><span>128</span><span>42</span></div>
           <div><span>NON-RESTORING DIVIDER</span><span>0.096 W</span><span>2442</span><span>0</span></div>
         </div>
-
         <p>
-          The reported results show the DSP-based multiplier achieving the lowest
-          power among the compared multiplier architectures, while the non-restoring
-          divider maintained low power without using DSP slices. Both designs met
-          the 100 MHz timing constraint with no critical-path violations.
+          The reported results show the DSP-based multiplier achieving the lowest power
+          among the compared multiplier architectures, while the non-restoring divider
+          maintained low power without using DSP slices. Both designs met the 100 MHz
+          timing constraint with no critical-path violations.
         </p>
       </div>
     </section>
 
     <section class="project-section validation">
-      <div class="section-label">06 — VALIDATION</div>
+      <div class="section-label">10 — VALIDATION</div>
       <div class="section-copy">
         <h2>Simulate.<br><span>Synthesize. Deploy.</span></h2>
         <p>
-          The designs were verified using Vivado simulation across 32-bit test vectors.
-          Hardware implementation and timing analysis were then used to validate
-          operation on the FPGA platform.
+          The designs were simulated using the Vivado Simulator and then subjected to
+          hardware implementation and timing analysis on the FPGA platform.
         </p>
-
         <div class="validation-grid">
           <div>SIMULATION<br><span>Functional verification</span></div>
           <div>SYNTHESIS<br><span>Resource analysis</span></div>
@@ -184,8 +182,8 @@
       <p class="eyebrow">PROJECT TAKEAWAY</p>
       <h2>DESIGN FOR THE<br><span>HARDWARE YOU HAVE.</span></h2>
       <p>
-        This project demonstrates a practical FPGA arithmetic design approach where
-        architecture, power, area and timing are considered together rather than in isolation.
+        Architecture, power, area and timing were treated as one engineering problem,
+        rather than four separate checkboxes.
       </p>
       <a href="work.html" class="back-button">← BACK TO WORK</a>
     </section>
