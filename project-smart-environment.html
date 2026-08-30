@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 03 | Smart Environment Monitoring & Control</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project-smart-environment.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">CHARULATA S D</a>
+    <a class="back-link" href="work.html">← WORK</a>
+  </header>
+
+  <main>
+
+    <section class="project-hero">
+      <div class="project-meta">
+        <span>PROJECT 03</span>
+        <span>AUG 2025 — DEC 2025</span>
+      </div>
+
+      <p class="project-kicker">ESP32 · IoT · SMART AUTOMATION · EDGE SYSTEMS</p>
+
+      <h1>
+        SMART ENVIRONMENT<br>
+        <span>MONITORING &amp; CONTROL.</span>
+      </h1>
+
+      <p class="project-intro">
+        An ESP32-based environmental monitoring and control system that combines
+        multi-sensor sensing, automatic actuation, ThingSpeak cloud monitoring,
+        SPIFFS-based offline storage and a local web dashboard.
+      </p>
+
+      <div class="tag-row">
+        <span>ESP32</span>
+        <span>DHT11</span>
+        <span>MQ2</span>
+        <span>PIR</span>
+        <span>ThingSpeak</span>
+        <span>SPIFFS</span>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-top">
+        <p class="eyebrow">01 / SYSTEM</p>
+        <p class="section-index">ARCHITECTURE</p>
+      </div>
+
+      <div class="split-heading">
+        <h2>ONE NODE.<br><span>THREE LAYERS.</span></h2>
+        <p>
+          The ESP32 acts as the central controller, receiving environmental
+          measurements, applying local control rules, driving the actuators,
+          and managing both cloud and offline data paths.
+        </p>
+      </div>
+
+      <figure class="figure-card large">
+        <img src="images/block-diagram.jpeg" alt="System block diagram">
+        <figcaption>System architecture and data flow</figcaption>
+      </figure>
+    </section>
+
+    <section class="project-section tinted">
+      <div class="section-top">
+        <p class="eyebrow">02 / HARDWARE</p>
+        <p class="section-index">SENSING + ACTUATION</p>
+      </div>
+
+      <h2>THE HARDWARE<br><span>STACK.</span></h2>
+
+      <div class="hardware-grid">
+        <article>
+          <span class="mono">DHT11</span>
+          <h3>Temperature + Humidity</h3>
+          <p>Provides temperature and humidity measurements to the ESP32.</p>
+        </article>
+
+        <article>
+          <span class="mono">MQ2</span>
+          <h3>Smoke + Gas</h3>
+          <p>Measures the analog smoke and gas level used for ventilation decisions.</p>
+        </article>
+
+        <article>
+          <span class="mono">PIR</span>
+          <h3>Motion Detection</h3>
+          <p>Detects human movement for occupancy-based lighting.</p>
+        </article>
+
+        <article>
+          <span class="mono">RELAY</span>
+          <h3>Fan + Lamp</h3>
+          <p>Allows the ESP32 to control the fan and lamp through GPIO-connected relays.</p>
+        </article>
+      </div>
+
+      <figure class="figure-card circuit">
+        <img src="images/circuit.jpeg" alt="Project circuit prototype">
+        <figcaption>Pictorial representation of the implemented circuit</figcaption>
+      </figure>
+    </section>
+
+    <section class="project-section">
+      <div class="section-top">
+        <p class="eyebrow">03 / LOGIC</p>
+        <p class="section-index">LOCAL DECISION MAKING</p>
+      </div>
+
+      <div class="split-heading">
+        <h2>THE ESP32<br><span>DECIDES.</span></h2>
+        <p>
+          Sensor readings are processed locally before the system decides
+          whether the fan or lamp should be activated.
+        </p>
+      </div>
+
+      <div class="logic-grid">
+        <div class="logic-card">
+          <span class="logic-number">01</span>
+          <strong>TEMPERATURE</strong>
+          <p>Temperature above 30°C turns the fan ON.</p>
+        </div>
+
+        <div class="logic-card">
+          <span class="logic-number">02</span>
+          <strong>GAS / SMOKE</strong>
+          <p>MQ2 value above 250 turns the fan ON for ventilation.</p>
+        </div>
+
+        <div class="logic-card">
+          <span class="logic-number">03</span>
+          <strong>MOTION</strong>
+          <p>Motion detected by PIR turns the lamp ON.</p>
+        </div>
+
+        <div class="logic-card">
+          <span class="logic-number">04</span>
+          <strong>NO MOTION</strong>
+          <p>When movement is absent, the lamp turns OFF after the defined interval.</p>
+        </div>
+      </div>
+
+      <figure class="figure-card flow">
+        <img src="images/flow-chart.jpeg" alt="System flow chart">
+        <figcaption>System operating flow</figcaption>
+      </figure>
+    </section>
+
+    <section class="project-section tinted">
+      <div class="section-top">
+        <p class="eyebrow">04 / CONNECTIVITY</p>
+        <p class="section-index">ONLINE + OFFLINE</p>
+      </div>
+
+      <h2>THE INTERNET<br><span>IS OPTIONAL.</span></h2>
+
+      <p class="wide-copy">
+        During normal operation, readings and actuator states are sent to
+        ThingSpeak using HTTP. When Wi-Fi is unavailable, timestamped records
+        are appended to <code>/data.csv</code> in SPIFFS. After reconnection,
+        the buffered records are uploaded and the local file is cleared.
+      </p>
+
+      <div class="mode-grid">
+        <div class="mode-card">
+          <span class="mode-label">ONLINE MODE</span>
+          <h3>ThingSpeak Cloud</h3>
+          <p>Remote visualization, historical logging and analytics.</p>
+        </div>
+
+        <div class="mode-card dark">
+          <span class="mode-label">OFFLINE MODE</span>
+          <h3>SPIFFS Storage</h3>
+          <p>Local timestamped CSV storage preserves data during connectivity loss.</p>
+        </div>
+
+        <div class="mode-card">
+          <span class="mode-label">LOCAL ACCESS</span>
+          <h3>ESP32 Web Dashboard</h3>
+          <p>Live readings and manual fan/lamp control over the local network.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-top">
+        <p class="eyebrow">05 / CLOUD RESULTS</p>
+        <p class="section-index">THINGSPEAK</p>
+      </div>
+
+      <h2>DATA THAT<br><span>KEEPS MOVING.</span></h2>
+
+      <p class="wide-copy">
+        Temperature, humidity, gas, motion, fan state and lamp state were
+        mapped to ThingSpeak fields and uploaded at regular intervals.
+        The project report records successful cloud updates and visualization.
+      </p>
+
+      <div class="image-grid two">
+        <figure class="figure-card">
+          <img src="images/thingspeak-temperature.jpeg" alt="ThingSpeak temperature graph">
+          <figcaption>ThingSpeak temperature graph</figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <img src="images/thingspeak-motion.jpeg" alt="ThingSpeak motion graph">
+          <figcaption>ThingSpeak motion graph</figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <img src="images/lamp-motion.jpeg" alt="Lamp motion graph">
+          <figcaption>Lamp response to motion</figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <img src="images/thingspeak-humidity.jpeg" alt="ThingSpeak humidity graph">
+          <figcaption>ThingSpeak humidity graph</figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <img src="images/mq2-gas.jpeg" alt="MQ2 gas graph">
+          <figcaption>MQ2 gas-level graph</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section tinted">
+      <div class="section-top">
+        <p class="eyebrow">06 / RESILIENCE</p>
+        <p class="section-index">OFFLINE OPERATION</p>
+      </div>
+
+      <div class="split-heading">
+        <h2>WHEN WI-FI<br><span>DISAPPEARS.</span></h2>
+        <p>
+          The system does not simply stop. It switches to local operation,
+          keeps recording data and preserves access through the ESP32.
+        </p>
+      </div>
+
+      <figure class="figure-card terminal">
+        <img src="images/serial-monitor.jpeg" alt="Serial monitor output">
+        <figcaption>Serial monitor showing readings, logging and AP fallback</figcaption>
+      </figure>
+
+      <div class="resilience-points">
+        <div>
+          <span>01</span>
+          <p>Wi-Fi failure is detected automatically.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <p>Sensor readings continue to be collected.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <p>Records are stored locally in SPIFFS as CSV.</p>
+        </div>
+        <div>
+          <span>04</span>
+          <p>After reconnection, stored data is uploaded to ThingSpeak.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-top">
+        <p class="eyebrow">07 / USER INTERFACE</p>
+        <p class="section-index">LOCAL DASHBOARD</p>
+      </div>
+
+      <h2>CONTROL IT<br><span>LOCALLY.</span></h2>
+
+      <p class="wide-copy">
+        The ESP32 hosts a browser-based dashboard with live sensor values,
+        fan and lamp controls, a file download link and automatic refresh.
+        The report documents operation in both Station mode and Access Point mode.
+      </p>
+
+      <figure class="figure-card dashboard">
+        <img src="images/dashboard.jpeg" alt="ESP32 local web dashboard">
+        <figcaption>ESP32 local web dashboard</figcaption>
+      </figure>
+
+      <figure class="figure-card alert">
+        <img src="images/bluetooth-alert.jpeg" alt="Bluetooth alert terminal">
+        <figcaption>Bluetooth alert terminal during threshold events</figcaption>
+      </figure>
+    </section>
+
+    <section class="project-section final-section tinted">
+      <div class="section-top">
+        <p class="eyebrow">08 / OUTCOME</p>
+        <p class="section-index">PROJECT SUMMARY</p>
+      </div>
+
+      <h2>MONITOR.<br>DECIDE.<br><span>RECOVER.</span></h2>
+
+      <p class="wide-copy">
+        The implementation combines real-time environmental sensing,
+        automatic actuation, cloud monitoring, persistent offline storage
+        and local dashboard access in a single ESP32 platform.
+      </p>
+
+      <div class="outcome-grid">
+        <span>REAL-TIME MONITORING</span>
+        <span>SMART AUTOMATION</span>
+        <span>THINGSpeak CLOUD</span>
+        <span>SPIFFS OFFLINE LOGGING</span>
+        <span>LOCAL WEB CONTROL</span>
+        <span>FAULT-TOLERANT OPERATION</span>
+      </div>
+
+      <a class="next-project" href="work.html">
+        <span>BACK TO SELECTED WORK</span>
+        <strong>↗</strong>
+      </a>
+    </section>
+
+  </main>
+
+</body>
+</html>
