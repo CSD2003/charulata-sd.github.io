@@ -46,7 +46,12 @@ body {
   padding: 30px;
   border: 1px solid #d5d5cd;
   background: #fff;
-  transition: transform .25s ease, background .25s ease, color .25s ease;
+  color: #171918;
+  text-decoration: none;
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    color .25s ease;
   margin-bottom: 18px;
 }
 
@@ -83,8 +88,17 @@ body {
   line-height: 1.8;
 }
 
+.project-card:hover p:last-child {
+  color: #bfc4bd;
+}
+
 .project-arrow {
   font-size: 22px;
+  color: #171918;
+}
+
+.project-card:hover .project-arrow {
+  color: #fff;
 }
 
 @media (max-width: 650px) {
