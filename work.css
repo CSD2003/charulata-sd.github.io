@@ -1,15 +1,3 @@
-/* WORK PAGE TEST */
-
-body {
-  background: red !important;
-}
-
-.work-hero {
-  min-height: 100vh;
-  ...
-}
-
-
 body {
   background: #f7f6f1;
 }
