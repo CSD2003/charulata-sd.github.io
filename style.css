@@ -282,7 +282,7 @@ h2 span { color: var(--accent); }
 
 .choice-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   border-top: 1px solid var(--line);
 }
 
@@ -298,7 +298,9 @@ h2 span { color: var(--accent); }
   transition: background .25s ease, transform .25s ease;
 }
 
-.choice:nth-child(even) { border-right: 0; }
+.choice:last-child {
+  border-bottom: 0;
+}
 
 .choice:hover {
   background: var(--ink);
