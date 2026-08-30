@@ -1,4 +1,6 @@
-body { background: #f7f6f1; }
+body {
+  background: #f7f6f1;
+}
 
 .work-hero {
   min-height: 100vh;
@@ -6,6 +8,7 @@ body { background: #f7f6f1; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 18px;
 }
 
 .work-kicker {
@@ -23,7 +26,9 @@ body { background: #f7f6f1; }
   letter-spacing: -.075em;
 }
 
-.work-hero h1 span { color: #165c56; }
+.work-hero h1 span {
+  color: #165c56;
+}
 
 .work-intro {
   max-width: 680px;
@@ -42,6 +47,7 @@ body { background: #f7f6f1; }
   border: 1px solid #d5d5cd;
   background: #fff;
   transition: transform .25s ease, background .25s ease, color .25s ease;
+  margin-bottom: 18px;
 }
 
 .project-card:hover {
@@ -50,14 +56,17 @@ body { background: #f7f6f1; }
   color: #fff;
 }
 
-.project-number, .project-date {
+.project-number,
+.project-date {
   font: 10px "DM Mono", monospace;
   letter-spacing: .12em;
   color: #70716b;
 }
 
 .project-card:hover .project-number,
-.project-card:hover .project-date { color: #bfc4bd; }
+.project-card:hover .project-date {
+  color: #bfc4bd;
+}
 
 .project-card h2 {
   margin: 0 0 15px;
@@ -74,9 +83,18 @@ body { background: #f7f6f1; }
   line-height: 1.8;
 }
 
-.project-arrow { font-size: 22px; }
+.project-arrow {
+  font-size: 22px;
+}
 
 @media (max-width: 650px) {
-  .work-hero { padding-left: 6vw; padding-right: 6vw; }
-  .project-card { grid-template-columns: 35px 1fr 25px; padding: 22px; }
+  .work-hero {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .project-card {
+    grid-template-columns: 35px 1fr 25px;
+    padding: 22px;
+  }
 }
