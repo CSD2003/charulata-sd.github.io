@@ -229,15 +229,6 @@ code {
   background: #fff;
 }
 
-.mode-card.dark {
-  background: #171918;
-  color: #fff;
-}
-
-.mode-card.dark p {
-  color: #bfc4bd;
-}
-
 .image-grid.two {
   display: grid;
   grid-template-columns: 1fr 1fr;
