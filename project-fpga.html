@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FPGA 32-bit Multiplier and Divider | Charulata S D">
+  <title>FPGA 32-bit Multiplier & Divider | Charulata S D</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">CHARULATA S D</a>
+    <a class="back-link" href="work.html">← WORK</a>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="section-top">
+        <p class="eyebrow">PROJECT 01</p>
+        <p class="section-index">MAR 2025 — JUL 2025</p>
+      </div>
+
+      <p class="project-kicker">FPGA · VHDL · LOW-POWER DIGITAL DESIGN</p>
+      <h1>32-BIT MULTIPLIER<br><span>&amp; DIVIDER.</span></h1>
+
+      <p class="project-summary">
+        Design and implementation of a low-power 32-bit arithmetic processing unit
+        on a Spartan-7-based Boolean FPGA board, with emphasis on power efficiency,
+        resource utilization, timing and real-time hardware operation.
+      </p>
+
+      <div class="tech-row">
+        <span>VHDL</span>
+        <span>SPARTAN-7</span>
+        <span>VIVADO</span>
+        <span>DSP48E1</span>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-label">01 — THE PROBLEM</div>
+      <div class="section-copy">
+        <h2>Arithmetic is easy to describe.<br><span>Efficient hardware is not.</span></h2>
+        <p>
+          The project focused on implementing multiplication and division efficiently
+          on a resource-constrained FPGA platform, balancing speed, power consumption
+          and hardware resources.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section split">
+      <div class="section-label">02 — THE APPROACH</div>
+      <div class="section-copy">
+        <h2>Four architectures.<br><span>One hardware decision.</span></h2>
+
+        <div class="architecture-grid">
+          <article>
+            <span>01</span>
+            <h3>DSP-BASED MULTIPLIER</h3>
+            <p>Uses the FPGA's dedicated DSP48E1 resources with pipelining for high-speed arithmetic.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>BOOTH MULTIPLIER</h3>
+            <p>Reduces multiplication operations through Booth encoding of signed binary operands.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>WALLACE TREE</h3>
+            <p>Reduces partial products through layers of full and half adders.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>NON-RESTORING DIVIDER</h3>
+            <p>Uses iterative conditional addition/subtraction for sequential binary division.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-label">03 — HARDWARE FLOW</div>
+      <div class="section-copy">
+        <h2>From operands<br><span>to visible output.</span></h2>
+
+        <div class="flow">
+          <div>32-BIT<br>OPERANDS</div>
+          <b>→</b>
+          <div>INPUT<br>REGISTERS</div>
+          <b>→</b>
+          <div>ARITHMETIC<br>CORE</div>
+          <b>→</b>
+          <div>OUTPUT<br>REGISTER</div>
+          <b>→</b>
+          <div>LOWER 16 BITS<br>ON LEDs</div>
+        </div>
+
+        <p>
+          Because of the board's limited I/O, operands are entered in 16-bit segments
+          using push buttons, while the lower 16 bits of the result are displayed
+          through onboard LEDs.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section metrics-section">
+      <div class="section-label">04 — RESULTS</div>
+      <div class="section-copy">
+        <h2>The numbers<br><span>tell the story.</span></h2>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>0.085</strong>
+            <span>W · DSP MULTIPLIER POWER</span>
+          </div>
+          <div class="metric">
+            <strong>0.096</strong>
+            <span>W · NON-RESTORING DIVIDER POWER</span>
+          </div>
+          <div class="metric">
+            <strong>1</strong>
+            <span>DSP SLICE USED BY DSP MULTIPLIER</span>
+          </div>
+          <div class="metric">
+            <strong>9</strong>
+            <span>LUTs USED BY DSP MULTIPLIER</span>
+          </div>
+          <div class="metric">
+            <strong>100</strong>
+            <span>MHz · SYSTEM CLOCK</span>
+          </div>
+          <div class="metric">
+            <strong>32</strong>
+            <span>CLOCK CYCLES · DIVIDER OPERATION</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section comparison">
+      <div class="section-label">05 — TRADE-OFFS</div>
+      <div class="section-copy">
+        <h2>Performance is<br><span>a balancing act.</span></h2>
+
+        <div class="comparison-table">
+          <div class="table-head"><span>ARCHITECTURE</span><span>POWER</span><span>LUTs</span><span>DSP</span></div>
+          <div><span>DSP MULTIPLIER</span><span>0.085 W</span><span>9</span><span>1</span></div>
+          <div><span>BOOTH MULTIPLIER</span><span>0.495 W</span><span>2442</span><span>0</span></div>
+          <div><span>WALLACE MULTIPLIER</span><span>0.115 W</span><span>128</span><span>42</span></div>
+          <div><span>NON-RESTORING DIVIDER</span><span>0.096 W</span><span>2442</span><span>0</span></div>
+        </div>
+
+        <p>
+          The reported results show the DSP-based multiplier achieving the lowest
+          power among the compared multiplier architectures, while the non-restoring
+          divider maintained low power without using DSP slices. Both designs met
+          the 100 MHz timing constraint with no critical-path violations.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section validation">
+      <div class="section-label">06 — VALIDATION</div>
+      <div class="section-copy">
+        <h2>Simulate.<br><span>Synthesize. Deploy.</span></h2>
+        <p>
+          The designs were verified using Vivado simulation across 32-bit test vectors.
+          Hardware implementation and timing analysis were then used to validate
+          operation on the FPGA platform.
+        </p>
+
+        <div class="validation-grid">
+          <div>SIMULATION<br><span>Functional verification</span></div>
+          <div>SYNTHESIS<br><span>Resource analysis</span></div>
+          <div>POWER<br><span>Post-implementation estimate</span></div>
+          <div>HARDWARE<br><span>Real-time validation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-end">
+      <p class="eyebrow">PROJECT TAKEAWAY</p>
+      <h2>DESIGN FOR THE<br><span>HARDWARE YOU HAVE.</span></h2>
+      <p>
+        This project demonstrates a practical FPGA arithmetic design approach where
+        architecture, power, area and timing are considered together rather than in isolation.
+      </p>
+      <a href="work.html" class="back-button">← BACK TO WORK</a>
+    </section>
+  </main>
+</body>
+</html>
