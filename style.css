@@ -247,7 +247,7 @@ h1 span, h2 span { color: var(--accent); }
   color: var(--muted);
 }
 
-.explore, .module-preview, .experience-section, .contact, .about-section, .education-section {
+.explore, .module-preview, .contact, .about-section, .education-section {
   padding: 115px 8vw;
   border-top: 1px solid var(--line);
 }
@@ -755,7 +755,7 @@ footer {
   .hero-meta { left: 6vw; right: 6vw; }
   .system-art { right: -18vw; opacity: .32; }
 
-  .explore, .module-preview, .experience-section, .contact, .about-section, .education-section {
+  .explore, .module-preview, .contact, .about-section, .education-section {
     padding-left: 6vw;
     padding-right: 6vw;
   }
@@ -876,4 +876,14 @@ footer {
     grid-template-columns: 1fr;
     gap: 8px;
   }
+}
+
+/* HEADER TYPOGRAPHY REFINEMENT */
+.brand {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.navigation {
+  font-size: 12px;
 }
