@@ -1,0 +1,111 @@
+
+/* =========================================================
+   FINAL HERO REFINEMENT
+   Keep the hero tagline in exactly two lines on desktop.
+   Make the personal name prominent and remove homepage LinkedIn.
+   ========================================================= */
+
+.hero-content {
+  max-width: 1200px;
+}
+
+.hero-name {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6.2vw, 7rem);
+  line-height: .9;
+  white-space: normal;
+  max-width: 1250px;
+  margin-top: 0;
+}
+
+.hero h1 span {
+  display: inline;
+}
+
+/* Preserve the intentional line break in the HTML */
+.hero h1 br {
+  display: block;
+}
+
+.hero-links {
+  margin-top: 34px;
+}
+
+/* The homepage should only have Explore here */
+.hero-links a:not(.primary-link) {
+  display: none;
+}
+
+/* Keep the About portrait small and circular */
+.about-photo {
+  width: 230px;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: 214px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+}
+
+.about-photo figcaption {
+  display: none;
+}
+
+/* Responsive hero */
+@media (max-width: 1000px) {
+  .hero h1 {
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-name {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    white-space: normal;
+  }
+
+  .about-photo {
+    width: 210px;
+    margin: 0 auto;
+  }
+
+  .about-photo img {
+    height: 194px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-name {
+    font-size: 15px;
+  }
+
+  .hero h1 {
+    font-size: 3.45rem;
+  }
+
+  .about-photo {
+    width: 190px;
+  }
+
+  .about-photo img {
+    height: 176px;
+  }
+}
