@@ -47,7 +47,7 @@ button { font: inherit; }
 }
 
 .brand {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: .08em;
 }
@@ -819,4 +819,60 @@ footer {
 
   footer { display: block; }
   footer span { display: block; margin: 6px 0; }
+}
+
+
+/* FINAL HERO / CONTACT REFINEMENTS */
+.brand {
+  font-size: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5.4vw, 6.4rem);
+  white-space: nowrap;
+}
+
+.contact-card {
+  max-width: 850px;
+  margin-top: 25px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-item:last-child {
+  border-bottom: 0;
+}
+
+.contact-label {
+  font: 10px "DM Mono", monospace;
+  letter-spacing: .12em;
+  color: var(--accent);
+}
+
+.contact-value {
+  font: 14px "DM Mono", monospace;
+  letter-spacing: .03em;
+}
+
+.contact-value:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 850px) {
+  .hero h1 {
+    white-space: normal;
+  }
+
+  .contact-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }
