@@ -923,3 +923,18 @@ footer {
   font-size: 12px;
   line-height: 1.7;
 }
+
+
+/* ONLY NEW EXPERIENCE ALIGNMENT FIX */
+
+.experience-section {
+  padding: 115px 8vw;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 850px) {
+  .experience-section {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}
