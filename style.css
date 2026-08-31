@@ -339,20 +339,157 @@ h2 span { color: var(--accent); }
   font-size: 16px;
 }
 
-.experience-preview {
-  margin-top: 30px;
-  max-width: 700px;
+/* EXPERIENCE */
+
+.experience-section {
+  padding: 115px 8vw;
+  border-top: 1px solid var(--line);
+  min-height: 90vh;
+}
+
+.experience-section.tinted {
+  background: var(--paper-dark);
+}
+
+.experience-heading {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.experience-kicker {
+  margin: 0 0 18px;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: .14em;
+  color: var(--accent);
+}
+
+.experience-heading h2 {
+  margin: 0;
+  max-width: 820px;
+}
+
+.experience-side {
+  padding: 0 0 8px 25px;
   border-left: 2px solid var(--accent);
-  padding: 22px 25px;
-  background: rgba(255,255,255,.35);
 }
 
-.experience-preview strong {
-  font: 13px "DM Mono", monospace;
+.experience-role {
+  margin: 0 0 15px;
+  font: 10px "DM Mono", monospace;
   letter-spacing: .1em;
+  color: var(--muted);
 }
 
-.experience-preview p { color: var(--muted); }
+.experience-side strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 25px;
+  letter-spacing: -.04em;
+}
+
+.experience-side > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.experience-body {
+  margin-top: 65px;
+  display: grid;
+  grid-template-columns: .65fr 1.35fr;
+  gap: 70px;
+}
+
+.experience-summary {
+  max-width: 430px;
+  padding-top: 4px;
+}
+
+.experience-summary > span,
+.experience-work > span,
+.experience-stack > span {
+  display: block;
+  margin-bottom: 22px;
+  font: 9px "DM Mono", monospace;
+  letter-spacing: .13em;
+  color: var(--accent);
+}
+
+.experience-summary h3 {
+  margin: 0 0 15px;
+  font-size: 30px;
+  letter-spacing: -.045em;
+}
+
+.experience-summary p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.experience-work {
+  border-top: 1px solid var(--line);
+}
+
+.experience-work article {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 18px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-work article b {
+  font: 10px "DM Mono", monospace;
+  color: var(--muted);
+}
+
+.experience-work article h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -.025em;
+}
+
+.experience-work article p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.experience-stack {
+  margin-top: 55px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.experience-stack > span {
+  margin: 5px 0 0;
+}
+
+.experience-stack > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.experience-stack > div > span {
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.35);
+  font: 10px "DM Mono", monospace;
+  letter-spacing: .06em;
+}
 
 .skill-cloud {
   display: flex;
@@ -544,6 +681,29 @@ footer {
     padding-right: 6vw;
   }
   .choice { grid-template-columns: 35px 1fr 25px; }
+  .experience-heading {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .experience-side {
+    max-width: 520px;
+  }
+
+  .experience-body {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .experience-summary {
+    max-width: 650px;
+  }
+
+  .experience-stack {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
   .about-grid { grid-template-columns: 1fr; gap: 45px; }
   .about-photo {
     width: 230px;
@@ -564,6 +724,33 @@ footer {
   .choice, .choice:nth-child(even) { border-right: 0; }
   .choice { min-height: 150px; }
   .system-art { width: 420px; height: 420px; top: 38vh; right: -45vw; }
+  .experience-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .experience-heading h2 {
+    font-size: 3.1rem;
+  }
+
+  .experience-side strong {
+    font-size: 22px;
+  }
+
+  .experience-body {
+    margin-top: 50px;
+  }
+
+  .experience-work article {
+    grid-template-columns: 30px 1fr;
+    gap: 12px;
+  }
+
+  .experience-summary p,
+  .experience-work article p {
+    font-size: 14px;
+  }
+
   .about-lead { font-size: 16px; }
   .about-text { font-size: 14px; }
   .about-photo {
