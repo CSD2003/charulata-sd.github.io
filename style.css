@@ -887,3 +887,39 @@ footer {
 .navigation {
   font-size: 12px;
 }
+
+/* EXPERIENCE FORMAT FIX ONLY */
+
+.experience-heading h2 {
+  font-size: clamp(3rem, 5.2vw, 6rem);
+  line-height: .92;
+  letter-spacing: -.065em;
+  margin: 25px 0 50px;
+}
+
+.experience-role {
+  margin-bottom: 55px;
+}
+
+.experience-layout {
+  grid-template-columns: .72fr 1.28fr;
+  gap: 80px;
+}
+
+.experience-intro h3 {
+  font-size: 27px;
+}
+
+.experience-intro > p:not(.eyebrow):not(.experience-date) {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.experience-list h3 {
+  font-size: 16px;
+}
+
+.experience-list p {
+  font-size: 12px;
+  line-height: 1.7;
+}
