@@ -17,10 +17,10 @@
     </button>
 
     <nav class="navigation" aria-label="Main navigation">
+      <a href="#about">ABOUT</a>
       <a href="work.html">PROJECTS</a>
       <a href="#experience">EXPERIENCE</a>
       <a href="#skills">SKILLS</a>
-      <a href="#about">ABOUT</a>
       <a href="#education">EDUCATION</a>
       <a href="#contact">CONTACT</a>
     </nav>
@@ -28,6 +28,7 @@
 
   <main id="top">
 
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-meta">
         <span>ECE / ENGINEERING PORTFOLIO</span>
@@ -35,7 +36,7 @@
       </div>
 
       <div class="hero-content">
-        <p class="eyebrow">CHARULATA S D</p>
+        <p class="eyebrow hero-name">CHARULATA S D</p>
 
         <h1>
           FROM CIRCUITS TO CODE,
@@ -73,6 +74,7 @@
       <div class="scroll-note">SCROLL TO EXPLORE</div>
     </section>
 
+    <!-- CHOICE SCREEN -->
     <section class="explore" id="explore">
       <div class="section-top">
         <p class="eyebrow">START HERE</p>
@@ -86,7 +88,7 @@
           <span class="choice-number">01</span>
           <div>
             <h3>ABOUT</h3>
-            <p>The person behind the systems.</p>
+            <p>The engineer behind the systems.</p>
           </div>
           <span class="arrow">↗</span>
         </a>
@@ -95,7 +97,7 @@
           <span class="choice-number">02</span>
           <div>
             <h3>PROJECTS</h3>
-            <p>Projects, builds &amp; engineering problems.</p>
+            <p>Builds, experiments &amp; engineering problems.</p>
           </div>
           <span class="arrow">↗</span>
         </a>
@@ -122,124 +124,142 @@
           <span class="choice-number">05</span>
           <div>
             <h3>EDUCATION</h3>
-            <p>Academic background and engineering education.</p>
+            <p>Academic background in engineering &amp; embedded systems.</p>
           </div>
           <span class="arrow">↗</span>
         </a>
       </div>
     </section>
 
-    <section class="module-preview tinted" id="about">
+    <!-- ABOUT -->
+    <section class="about-section tinted" id="about">
       <div class="section-top">
         <p class="eyebrow">ABOUT</p>
         <p class="section-index">03A</p>
       </div>
-      <h2>THE PERSON<br><span>BEHIND THE BUILDS.</span></h2>
-      <p class="module-note">
-        A fuller story about my engineering journey will live here.
-      </p>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="about-kicker">THE ENGINEER BEHIND THE BUILDS</p>
+
+          <h2>ENGINEERING<br><span>WITH INTENT.</span></h2>
+
+          <p class="about-lead">
+            I am an Electronics and Communication Engineer from Bengaluru,
+            currently pursuing an M.Tech in Embedded Systems at Vellore
+            Institute of Technology, Chennai.
+          </p>
+
+          <p class="about-text">
+            My work sits at the intersection of hardware, firmware and
+            software. I enjoy understanding how a system works from the
+            circuit level upward, then turning that understanding into
+            something practical, reliable and usable.
+          </p>
+
+          <p class="about-text">
+            My interests span embedded systems, IoT, FPGA-based digital
+            design, PCB development and software. I am especially drawn to
+            projects where electronics and code have to work together as one
+            system rather than as isolated pieces.
+          </p>
+
+          <div class="about-facts">
+            <div>
+              <span>BASED IN</span>
+              <strong>Bengaluru, India</strong>
+            </div>
+            <div>
+              <span>CURRENTLY</span>
+              <strong>M.Tech · Embedded Systems</strong>
+            </div>
+            <div>
+              <span>BACKGROUND</span>
+              <strong>B.E. · Electronics &amp; Communication</strong>
+            </div>
+            <div>
+              <span>FOCUS</span>
+              <strong>Embedded · IoT · FPGA · Digital Design</strong>
+            </div>
+          </div>
+        </div>
+
+        <figure class="about-photo">
+          <img src="assets/charulata-profile.jpg" alt="Charulata S D">
+          <figcaption>CHARULATA S D · ECE / EMBEDDED SYSTEMS</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section class="module-preview" id="projects">
-      <div class="section-top">
-        <p class="eyebrow">PROJECTS</p>
-        <p class="section-index">03B</p>
-      </div>
-      <h2>ENGINEERING<br><span>BUILDS.</span></h2>
-      <p class="module-note">
-        Explore selected project case studies across embedded systems,
-        IoT, FPGA implementation and digital design.
-      </p>
-      <div class="hero-links">
-        <a href="work.html">VIEW PROJECTS ↗</a>
-      </div>
-    </section>
-
+    <!-- EXPERIENCE -->
     <section class="module-preview tinted" id="experience">
       <div class="section-top">
         <p class="eyebrow">EXPERIENCE</p>
-        <p class="section-index">03C</p>
+        <p class="section-index">03B</p>
       </div>
       <h2>INDUSTRY<br><span>EXPERIENCE.</span></h2>
-
       <div class="experience-preview">
         <strong>BOSCH / RIDEBUDDY</strong>
         <p>Backend &amp; cloud development · FastAPI · Python · MongoDB · REST APIs</p>
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section class="module-preview" id="skills">
       <div class="section-top">
         <p class="eyebrow">SKILLS</p>
-        <p class="section-index">03D</p>
+        <p class="section-index">03C</p>
       </div>
       <h2>THE<br><span>TOOLBOX.</span></h2>
-
       <div class="skill-cloud">
-        <span>ESP32</span>
-        <span>VHDL</span>
-        <span>FPGA</span>
-        <span>Python</span>
-        <span>C / C++</span>
-        <span>FastAPI</span>
-        <span>REST APIs</span>
-        <span>MongoDB</span>
-        <span>AWS</span>
-        <span>MATLAB</span>
-        <span>DesignSpark PCB</span>
-        <span>Proteus</span>
+        <span>ESP32</span><span>VHDL</span><span>FPGA</span><span>Python</span>
+        <span>C / C++</span><span>FastAPI</span><span>REST APIs</span><span>MongoDB</span>
+        <span>AWS</span><span>MATLAB</span><span>DesignSpark PCB</span><span>Proteus</span>
       </div>
     </section>
 
-    <section class="module-preview tinted" id="education">
+    <!-- EDUCATION -->
+    <section class="education-section tinted" id="education">
       <div class="section-top">
         <p class="eyebrow">EDUCATION</p>
-        <p class="section-index">03E</p>
+        <p class="section-index">03D</p>
       </div>
 
       <h2>ACADEMIC<br><span>FOUNDATION.</span></h2>
 
-      <div class="education-grid">
+      <div class="education-list">
 
-        <article class="education-card current">
-          <div class="education-card-top">
-            <span class="education-number">01</span>
-            <span class="education-year">JUL 2026 — PRESENT</span>
-          </div>
-          <div class="education-card-body">
+        <article class="education-card">
+          <span class="education-number">01</span>
+          <div class="education-main">
+            <p class="education-date">JUL 2026 — PRESENT</p>
             <h3>Vellore Institute of Technology, Chennai</h3>
             <p>M.Tech in Embedded Systems</p>
           </div>
         </article>
 
         <article class="education-card">
-          <div class="education-card-top">
-            <span class="education-number">02</span>
-            <span class="education-year">2022 — 2026</span>
-          </div>
-          <div class="education-card-body">
+          <span class="education-number">02</span>
+          <div class="education-main">
+            <p class="education-date">2022 — 2026</p>
             <h3>B.M.S. College of Engineering, Bengaluru</h3>
             <p>B.E. in Electronics and Communication Engineering</p>
           </div>
         </article>
 
         <article class="education-card">
-          <div class="education-card-top">
-            <span class="education-number">03</span>
-            <span class="education-year">2020 — 2022</span>
-          </div>
-          <div class="education-card-body">
+          <span class="education-number">03</span>
+          <div class="education-main">
+            <p class="education-date">2020 — 2022</p>
             <h3>Sadhana PU College, Bengaluru</h3>
             <p>PCMC · Department of Pre-University Education, Karnataka</p>
           </div>
         </article>
 
         <article class="education-card">
-          <div class="education-card-top">
-            <span class="education-number">04</span>
-            <span class="education-year">2020</span>
-          </div>
-          <div class="education-card-body">
+          <span class="education-number">04</span>
+          <div class="education-main">
+            <p class="education-date">2020</p>
             <h3>Carmel School, Bengaluru</h3>
             <p>Indian Certificate of Secondary Education (ICSE)</p>
           </div>
@@ -248,10 +268,10 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="contact" id="contact">
       <p class="eyebrow">CONTACT</p>
       <h2>LET'S BUILD<br><span>SOMETHING.</span></h2>
-
       <div class="contact-links">
         <a href="mailto:sdcharulata@gmail.com">EMAIL ↗</a>
         <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LINKEDIN ↗</a>
