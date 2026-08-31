@@ -1,8 +1,8 @@
-
 /* =========================================================
    FINAL HERO REFINEMENT
    Keep the hero tagline in exactly two lines on desktop.
    Make the personal name prominent and remove homepage LinkedIn.
+   Keep the About portrait small and circular.
    ========================================================= */
 
 .hero-content {
@@ -10,7 +10,7 @@
 }
 
 .hero-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: .16em;
   margin-bottom: 22px;
@@ -75,7 +75,7 @@
 
 @media (max-width: 850px) {
   .hero-name {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .hero h1 {
@@ -94,7 +94,7 @@
 
 @media (max-width: 600px) {
   .hero-name {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero h1 {
